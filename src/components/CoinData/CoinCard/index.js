@@ -30,7 +30,7 @@ const percentShow = (percent) => {
 const CoinCard = ({coin}) => {
 
     return(
-        <Card to={`/Coinbase/Detail/${coin.id}`}>
+        <Card to={`/CoinBase/Detail/${coin.id}`}>
             <Image src={coin.image}/>
             <Name>{coin.name}</Name>
             <Price>${coin.current_price}</Price>

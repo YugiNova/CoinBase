@@ -17,9 +17,9 @@ const Header = () => {
 
     return(
         <Container>
-            <Logo to={"/Coinbase"}>CoinBase</Logo>
+            <Logo to={"/CoinBase"}>CoinBase</Logo>
             <NavList width={navWidth}>
-                <NavItem to={"/Coinbase"}>Market</NavItem>
+                <NavItem to={"/CoinBase"}>Market</NavItem>
                 <NavItem>Detail</NavItem>
                 <NavItem>Dashboard</NavItem>
             </NavList>
