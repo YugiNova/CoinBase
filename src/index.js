@@ -11,11 +11,11 @@ import Detail from './pages/Detail';
 
 const router  = createBrowserRouter([
   {
-    path: '/',
+    path: '/Coinbase',
     element: <Home/>
   },
   {
-    path: '/Detail/:coinID',
+    path: '/Coinbase/Detail/:coinID',
     key: ':coinID',
     element: <Detail/>
   }

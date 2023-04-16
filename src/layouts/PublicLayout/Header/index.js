@@ -1,16 +1,29 @@
-import { Container, Logo, NavItem, NavList } from "./styles"
+import { useState } from "react"
+import { Container, Logo, NavButton, NavItem, NavList } from "./styles"
+import {MenuOutlined} from '@ant-design/icons'
 
 
 const Header = () => {
+    const [navWidth, setNavWidth]= useState("0");
+
+    const toggleNav = () => {
+        if(navWidth === 0){
+            setNavWidth("16.5rem")
+        }
+        else{
+            setNavWidth(0)
+        }
+    }
 
     return(
         <Container>
-            <Logo to={"/"}>CoinBase</Logo>
-            <NavList>
-                <NavItem>Market</NavItem>
-                <NavItem>Choose Us</NavItem>
+            <Logo to={"/Coinbase"}>CoinBase</Logo>
+            <NavList width={navWidth}>
+                <NavItem to={"/Coinbase"}>Market</NavItem>
+                <NavItem>Detail</NavItem>
                 <NavItem>Dashboard</NavItem>
             </NavList>
+            <NavButton onClick={toggleNav}><MenuOutlined /></NavButton>
         </Container>
     )
 }

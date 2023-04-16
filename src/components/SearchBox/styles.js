@@ -6,7 +6,9 @@ export const Container = styled.div`
     position: relative;
     height: auto;
 
-
+    @media screen and (min-width: 300px) and (max-width: 600px){
+        width: 100%;
+    }
 `
 
 export const SearchCoins = styled.input`

@@ -5,10 +5,19 @@ export const Container = styled.div`
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto 1fr auto;
     column-gap: 5rem;
-    row-gap: 0;
+    row-gap: 2rem;
 
     h2,h3,h4{
         color: white;
+
+        svg{
+            margin-right: 3px;
+        }
+    }
+
+    @media screen and (min-width: 300px) and (max-width: 600px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto auto;
     }
 `
 
@@ -31,6 +40,11 @@ export const Name = styled.div`
         background: linear-gradient(to right, #ff9332, #cac531);
         -webkit-background-clip: text;
         color: transparent;
+    }
+
+    @media screen and (min-width: 300px) and (max-width: 600px){
+        grid-column: 1/2;
+        grid-row: 1/2;
     }
 `
 
@@ -56,6 +70,13 @@ export const Info = styled.div`
     border-radius: 1rem;
 
     padding: 2rem 0;
+
+    @media screen and (min-width: 300px) and (max-width: 600px){
+        grid-column: 1/2;
+        grid-row: 2/3;
+        width: 75%;
+        margin: 0 auto;
+    }
 `
 
 export const Rank = styled.h2`
@@ -120,6 +141,11 @@ export const Value = styled.div`
 export const ChartWrapper = styled.div`
     grid-column: 2/3;
     grid-row: 2/3;
+
+    @media screen and (min-width: 300px) and (max-width: 600px){
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
 `
 
 export const Description = styled.div`
@@ -152,6 +178,11 @@ export const Description = styled.div`
         &:hover{
             color: rgba(255, 147, 50,0.5); 
         }
+    }
+
+    @media screen and (min-width: 300px) and (max-width: 600px){
+        grid-column: 1/2;
+        grid-row: 4/5;
     }
 
 `

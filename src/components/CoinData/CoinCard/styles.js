@@ -16,6 +16,15 @@ export const Card = styled(Link)`
     color: white;
 
     text-decoration: none;
+
+    @media screen and (min-width: 300px) and (max-width: 600px){
+        margin-top: 2rem;
+        width: 70%;
+
+        :nth-child(1){
+            margin-top: 0;
+        }
+    }
 `
 
 export const Image = styled.img`

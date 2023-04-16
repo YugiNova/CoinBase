@@ -14,6 +14,10 @@ export const CoinsTop = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 1rem 0;
+
+  @media screen and (min-width: 300px) and (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 export const Title = styled.h2`
   margin: 0;

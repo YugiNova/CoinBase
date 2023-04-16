@@ -22,6 +22,13 @@ export const Title = styled.div`
         -webkit-background-clip: text;
         color: transparent;
     }
+
+
+    @media screen and (min-width: 300px) and (max-width: 600px){
+        h3,h2{
+            font-size: 5rem;
+        }
+    }
 `
 
 export const Bitcoin = styled(motion.div)`
@@ -32,6 +39,11 @@ export const Bitcoin = styled(motion.div)`
 
     img{
         width: 100%;
+    }
+
+    @media screen and (min-width: 300px) and (max-width: 600px){
+        top: 40%;
+        left: 1%;
     }
 `
 
@@ -44,4 +56,9 @@ export const Etherum = styled(motion.div)`
     img{
         width: 100%;
     }
+
+    @media screen and (min-width: 300px) and (max-width: 600px){
+        top: 40%;
+        right: 1%;
+    }   
 `

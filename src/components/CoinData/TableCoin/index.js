@@ -10,6 +10,7 @@ import {
   Price,
 } from "./styles";
 import Icon from "@ant-design/icons/lib/components/Icon";
+import { useEffect, useMemo, useState } from "react";
 
 const percentColor = (percent) => {
   if (percent > 0) {
@@ -37,8 +38,64 @@ const percentShow = (percent) => {
     }
 }
 
+const getWindowSize = () => {
+  const {innerWidth,innerHeight} = window;
+  return {innerWidth,innerHeight}
+}
+
+
+
 const TableCoin = ({ coins }) => {
-  const columns = [
+  const [windowSize,setWindowSize] = useState(getWindowSize())
+  
+
+  const columnsMobile = [
+    {
+      title: "#",
+      dataIndex: "rank",
+      key: "rank",
+      render: (_, item) => {
+        return <CoinRank>{item.market_cap_rank}</CoinRank>;
+      },
+    },
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+      render: (_, item) => {
+        return (
+          <CoinName to={`/Coinbase/Detail/${item.id}`}>
+            <img src={item.image} />
+            {item.name}
+            <span>   • {item.symbol}</span>
+          </CoinName>
+        );
+      },
+    },
+    {
+      title: "Change (24h)",
+      dataIndex: "change",
+      key: "change",
+      render: (_, item) => {
+        return (
+          <ChangePercent color={percentColor(item.price_change_percentage_24h)}>
+                {percentShow(item.price_change_percentage_24h)}
+          </ChangePercent>
+        );
+      },
+    },
+    {
+      title: "Price",
+      dataIndex: "price",
+      key: "price",
+      render: (_, item) => {
+        return <Price>${item.current_price}</Price>;
+      },
+    },
+  ];
+  
+  
+  const columnsDesktop = [
     {
       title: "#",
       dataIndex: "rank",
@@ -93,6 +150,31 @@ const TableCoin = ({ coins }) => {
     },
   ];
 
+  const [columnsLayout, setColumnsLayout] = useState(columnsMobile);
+
+  useEffect(()=> {
+    if(windowSize.innerWidth<=600 && windowSize.innerWidth>=300){
+      setColumnsLayout(columnsMobile)
+    }
+    else if(windowSize.innerWidth> 1200){
+      setColumnsLayout(columnsDesktop)
+    }
+  },[windowSize.innerWidth])
+
+  useEffect(()=> {
+    const handleWindowResize = () => {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    }
+  },[])
+
+  
+
   let locale = {
     emptyText: (
       <EmptyDisplay>
@@ -101,7 +183,7 @@ const TableCoin = ({ coins }) => {
     )
   };
 
-  return <CoinsTable locale={locale} columns={columns} dataSource={coins} />;
+  return <CoinsTable locale={locale} columns={columnsLayout} dataSource={coins} />;
 };
 
 export default TableCoin;

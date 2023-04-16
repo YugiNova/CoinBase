@@ -35,6 +35,24 @@ const percentShow = (percent) => {
     }
 }
 
+const valueChangeShow = (value) => {
+  if(value > 0){
+    return(
+        <>
+            <CaretUpOutlined />
+            ${value.toFixed(2)}
+        </>
+    )
+}else{
+    return(
+        <>
+            <CaretDownOutlined />
+            ${(value*(-1)).toFixed(2)}
+        </>
+    )
+}
+}
+
 const CoinDetail = () => {
   const { coinID } = useParams();
   const dispatch = useDispatch();
@@ -99,14 +117,14 @@ const CoinDetail = () => {
         <Value color={percentColor(coinDetails.priceChange)}>
             <h1>Price</h1>
             <h2>${coinDetails.price}</h2>
-            <h3>{coinDetails.priceChange.toFixed(2)}</h3>
+            <h3>{valueChangeShow(coinDetails.priceChange)}</h3>
             <h4>{percentShow(coinDetails.priceChangePercent)}</h4>
         </Value>
         <Value color={percentColor(coinDetails.marketCapChange)}>
             <h1>Market Cap</h1>
             <h2>${(coinDetails.marketCap/1000000000).toFixed(2)}B</h2>
             
-            <h3>${(coinDetails.marketCapChange/1000000).toFixed(2)}M</h3>
+            <h3>{valueChangeShow(coinDetails.marketCapChange/1000000000)}B</h3>
             <h4>{percentShow(coinDetails.marketCapChangePercent)}</h4>
         </Value>
       </Info>
