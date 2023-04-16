@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/CoinBase/static/css/main.95d5629c.css",
+    "main.css": "/CoinBase/static/css/main.048f9c2d.css",
     "main.js": "/CoinBase/static/js/main.9e99a8ed.js",
     "static/js/787.221bea84.chunk.js": "/CoinBase/static/js/787.221bea84.chunk.js",
     "static/media/bitcoin.png": "/CoinBase/static/media/bitcoin.e146d46fb598ae0d8f43.png",
     "static/media/etherum.png": "/CoinBase/static/media/etherum.c6cffe78f0c6abc85da9.png",
     "static/media/logo.svg": "/CoinBase/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/CoinBase/index.html",
-    "main.95d5629c.css.map": "/CoinBase/static/css/main.95d5629c.css.map",
+    "main.048f9c2d.css.map": "/CoinBase/static/css/main.048f9c2d.css.map",
     "main.9e99a8ed.js.map": "/CoinBase/static/js/main.9e99a8ed.js.map",
     "787.221bea84.chunk.js.map": "/CoinBase/static/js/787.221bea84.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.95d5629c.css",
+    "static/css/main.048f9c2d.css",
     "static/js/main.9e99a8ed.js"
   ]
 }
