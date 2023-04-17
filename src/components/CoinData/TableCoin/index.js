@@ -110,7 +110,7 @@ const TableCoin = ({ coins }) => {
       key: "name",
       render: (_, item) => {
         return (
-          <CoinName to={`/Detail/${item.id}`}>
+          <CoinName to={`CoinBase/Detail/${item.id}`}>
             <img src={item.image} />
             {item.name}
             <span>   • {item.symbol}</span>
